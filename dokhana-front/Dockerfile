@@ -8,4 +8,5 @@ RUN npm install react react-dom --save
 RUN npm run build
 EXPOSE 4200
 RUN npm install -g serve
-CMD serve -s build
+RUN serve -s build
+CMD npm start

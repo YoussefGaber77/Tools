@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use(cors());
 
-app.set('port', process.env.port || 4000);
+app.set('port', process.env.port || 3000);
 app.use(bodyparser.json());
 
 
