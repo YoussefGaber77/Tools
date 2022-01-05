@@ -1,9 +1,11 @@
-FROM node:alpine
-WORKDIR /app
-COPY package.json ./
-COPY package-lock.json ./
-COPY ./ ./
-RUN npm i
-Run npm run build
+FROM node AS build
+RUN mkdir -p usr/src/app/frontend3
+WORKDIR usr/src/app/frontend3
+COPY package.json /usr/src/app/frontend3
+RUN npm install
+COPY . /usr/src/app/frontend3
+RUN npm install react react-dom --save 
+RUN npm run build
 EXPOSE 4200
-CMD ["npm", "run", "start"]
+RUN npm install -g serve
+CMD serve -s build

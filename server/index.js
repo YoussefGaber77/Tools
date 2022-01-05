@@ -4,9 +4,19 @@ import express from "express";
 const app = express();
 import todomodel from "./models/task.js";
 connection();
+var express = require('express');
+var app = express();
+var mongoose = require('mongoose');
+var bodyparser = require('body-parser');
+var User = require('./models/User');
 
+var cors = require("cors");
 app.use(express.json());
+
 app.use(cors());
+
+app.set('port', process.env.port || 3000);
+app.use(bodyparser.json());
 
 
 app.get("/getTodos", async(req, res) => {
@@ -23,7 +33,6 @@ app.post("/addTodo", async(req, res) => {
     res.send("done");
 });
 
-
-
-const port = 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+app.listen(app.get('port'), function(err,response){
+    console.log("Server is running on port ", app.get('port'));
+});
