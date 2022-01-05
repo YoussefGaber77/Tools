@@ -4,11 +4,7 @@ import express from "express";
 const app = express();
 import todomodel from "./models/task.js";
 connection();
-var express = require('express');
-var app = express();
-var mongoose = require('mongoose');
 var bodyparser = require('body-parser');
-var User = require('./models/User');
 
 var cors = require("cors");
 app.use(express.json());
