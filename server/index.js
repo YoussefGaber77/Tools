@@ -4,7 +4,7 @@ import express from "express";
 const app = express();
 import todomodel from "./models/task.js";
 connection();
-var bodyparser = require('body-parser');
+import bodyparser from "body-parser";
 
 app.use(express.json());
 
