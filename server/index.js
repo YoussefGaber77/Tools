@@ -6,7 +6,6 @@ import todomodel from "./models/task.js";
 connection();
 var bodyparser = require('body-parser');
 
-var cors = require("cors");
 app.use(express.json());
 
 app.use(cors());
