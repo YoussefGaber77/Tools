@@ -7,13 +7,13 @@ function App() {
   const [data, setData] = useState([]);
  
   useEffect(() => {
-    axios.get("http://localhost:3000/getTodos").then((res) => {
+    axios.get("http://localhost:4000/getTodos").then((res) => {
       setData(res.data);
    
     })}, []);
   const [newTodo, setNewTodo] = useState('');
   const addtodo = () => {
-    axios.post("http://localhost:3000/addTodo", {
+    axios.post("http://localhost:4000/addTodo", {
       desc: newTodo,
     })
     .then(() => {
